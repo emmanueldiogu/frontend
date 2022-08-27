@@ -30,94 +30,10 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-    <style type="text/css">
-        
-        .jutting_strip {
-            width: 120px;
-            position: absolute;
-            top: 35%;
-            right: 0;
-            border-radius: 999999999999px 0px 0px 999999999999px;
-            background: rgb(240, 240, 240);
-        }
+    <script src="lib/html5countrymapv4.2/mapdata.js"></script>
+    <script src="lib/html5countrymapv4.2/countrymap.js"></script>
 
-        .marquee {
-          width: 100%;
-          overflow: hidden;
-          border: 1px solid #ccc;
-          background: #ccc;
-          color: var(--bs-primary);
-          font-weight: bold;
-        }
-
-        .navbar a {
-            color: white !important;
-            padding-right: 10px !important;
-            padding-left: 10px !important;
-        }
-
-        .alt_links {
-            color: white;
-            text-decoration: none;
-        }
-
-        .alt_links:hover {
-            color: var(--primary_2);
-        }
-
-        .alt_link_icon {
-            transition: transform 0.5s;
-        }
-
-        .alt_links:hover .alt_link_icon {
-            transform: translate(10px);
-        }
-
-        .press_release_nav .nav-link {
-            color: black;
-        }
-
-        .active {
-            color: #0FC85E;
-        }
-
-        a.masonry_link {
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .contact_link {
-            color: white;
-            text-decoration: none;
-        }
-
-        /* Hide scrollbar for Chrome, Safari and Opera */
-
-        .hide_scroll::-webkit-scrollbar {
-          display: none;
-        }
-
-        /* Hide scrollbar for IE, Edge and Firefox */
-
-        .hide_scroll {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
-        }
-
-        .no_animation_header::before, .no_animation_header::after {
-            content: '' !important;
-            display: none !important;
-        }
-
-        .footer_link {
-            text-decoration: none;
-        }
-
-        .footer_link:hover {
-            color: var(--primary_light) !important;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 
 <body>
@@ -130,19 +46,9 @@
 
 
     <header>
-        <!-- 1st Level Topbar Start -->
-        <div class="container-fluid px-5 py-3 d-none d-lg-block">
-            <div class="row gx-0">
-                
-                <div class="col-lg-12 text-end text-uppercase small">
-                    <a href="" style="text-decoration: none;">Staff Mail</a>
-                </div>
-            </div>
-        </div>
-        <!-- 1st Level Topbar End -->
 
         <!-- 2nd Level Topbar Start -->
-        <div class="container-fluid px-5 py-4 d-none d-lg-block level_top_bar" style="position: relative">
+        <div class="container-fluid px-5 py-5 d-none d-lg-block level_top_bar" style="position: relative">
             <div class="row gx-0 justify-content-center">
                 
                 <div class="col-1 text-center border-end">
@@ -157,8 +63,9 @@
             </div>
 
             <div class="jutting_strip p-2 ps-4">
-                <a class="me-2" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                <a class="me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
+                <a href="" class="me-4 staff_mail_link">Staff Mail</a>
+                <a class="me-3" href=""><i class="fab fa-twitter fw-normal"></i></a>
+                <a class="me-3" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
             </div>
         </div>
         <!-- 2nd Level Topbar End -->
@@ -177,16 +84,22 @@
         </div>
 
 
+        <div class="text-center logo_strip d-none" style="z-index: 999999999999999999999999999999999999999999999999;">
+            <div class="d-inline-block"><img src="assets_temp/agile_logo_bg_white_sticky.jpg" width="180px" class="rounded"></div>
+        </div>
+
+
         <!-- Navbar & Carousel Start -->
         <div class="container-fluid position-relative p-0" style="position: relative;">
             <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
                 </button>
+                
                 <div class="bg-white rounded p-2 navbar-image-packs">
                     <div class="border-end pe-2 d-inline-block"><img src="assets_temp/world_logo.png" width="35px"></div>
                     <div class="border-end pe-2 d-inline-block"><img src="assets_temp/agile_logo_white.png" width="100px"></div>
-                    <div class=" d-inline-block"><img src="assets_temp/coat_of_arms.png" width="35px"></div>
+                    <div class="d-inline-block"><img src="assets_temp/coat_of_arms.png" width="35px"></div>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav mx-auto py-0">
@@ -528,10 +441,15 @@
                     <div class="col-12">
                         <div class="row justify-content-center">
 
-                            <div class="col-sm-12 col-md-8 bg-light">
-                                <img src="https://miro.medium.com/max/800/1*x1xto1-QWq8LvjKnOsu6xA.png" class="img-fluid">
+                            <div class="col-sm-12 col-md-8 bg-light d-flex flex-column justify-content-between">
+                                <!-- <img src="https://miro.medium.com/max/800/1*x1xto1-QWq8LvjKnOsu6xA.png" class="img-fluid d-none"> -->
 
-                                <a href="" class="d-block p-3 my-3 d-flex justify-content-center bg-white" style="text-decoration: none">
+
+                                <div class="d-flex justify-content-center">
+                                    <div id="map" class=""></div>
+                                </div>
+
+                                <a href="" class="d-block p-3 my-3 d-flex justify-content-center bg-white w-100 " style="text-decoration: none">
                                     <div>
                                         <span class="me-5">View AGILE Project States</span>
                                     </div>

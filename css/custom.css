@@ -1,0 +1,89 @@
+.jutting_strip {
+    /* width: 120px; */
+    position: absolute;
+    top: 35%;
+    right: 0;
+    border-radius: 999999999999px 0px 0px 999999999999px;
+    background: rgb(240, 240, 240);
+}
+
+.marquee {
+width: 100%;
+overflow: hidden;
+border: 1px solid #ccc;
+background: #ccc;
+color: var(--bs-primary);
+font-weight: bold;
+}
+
+.navbar a {
+    color: white !important;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+}
+
+.alt_links {
+    color: white;
+    text-decoration: none;
+}
+
+.alt_links:hover {
+    color: var(--primary_2);
+}
+
+.alt_link_icon {
+    transition: transform 0.5s;
+}
+
+.alt_links:hover .alt_link_icon {
+    transform: translate(10px);
+}
+
+.press_release_nav .nav-link {
+    color: black;
+}
+
+.active {
+    color: #0FC85E;
+}
+
+a.masonry_link {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact_link {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+
+.hide_scroll::-webkit-scrollbar {
+display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+.hide_scroll {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
+
+.no_animation_header::before, .no_animation_header::after {
+    content: '' !important;
+    display: none !important;
+}
+
+.footer_link {
+    text-decoration: none;
+}
+
+.footer_link:hover {
+    color: var(--primary_light) !important;
+}
+
+a.staff_mail_link {
+    text-decoration: none !important;
+    font-weight: bold;
+}
